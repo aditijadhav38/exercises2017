@@ -1,0 +1,18 @@
+#To chech bwhether a given file is a file or directory.
+#!/bin/bash
+if[$# -eq 0]
+then
+	echo "Insufficient arguments"
+	exit 1
+fi
+for i in $*
+do
+	if[-f $i]
+	then
+	echo "$i is an ordinary file"
+	
+	elif[-d $i]
+	then
+		echo "$i is a directory"
+	fi
+done

@@ -1,0 +1,24 @@
+#to write a shell script that deletes all lines containing a specified word in one or more files supplied as arguments.
+
+#!/bin/bash
+if[$# -eq 0]
+then
+	echo "Insufficients arguments"
+	exit 1
+else
+	echo "Enter word"
+	read word
+	for f in $*
+	do
+	if[-f $f]
+	then
+		echo "Before deleting"
+		cat $f
+		echo "after deleting"
+		grep -v "$word" $f > $f
+		cat $f
+	else
+		echo "$f is not an ordinary file"
+	fi
+	shift
+done

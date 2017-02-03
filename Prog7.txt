@@ -1,0 +1,15 @@
+#factorial of a given no
+#!/bin/bash
+if[$# -eq 0]
+then
+	echo "Insufficient arguments"
+	exit 1
+fi
+fact=1
+num=$1
+while[$num -ge 1]
+do
+	fact='expr $fact /* $num'
+	num='expr $num-1'
+done
+	echo "factorial is $fact"

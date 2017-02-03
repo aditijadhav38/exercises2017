@@ -1,0 +1,21 @@
+#receives a list of files as its arguments counts and reports the occurence of each word in first argument file on other argument files.
+#!/bin/bash
+if[$# -eq 0]
+then
+	echo "Insufficient arguments"
+	exit 1
+fi
+f=$1
+for i in 'cat $f'
+do
+	for j in $*
+	do
+	if[-f $j]
+	then
+	c='grep -c $i $j'
+	echo "No of occurences of $i in $j is:$c"
+	else
+	echo "$j is not a file"
+	fi
+    done
+done

@@ -1,0 +1,14 @@
+#to write a shell script to list all the directory files in directory.
+#!/bin/bash
+echo  "Enter the directory name"
+read dir
+if[-d $dir]
+then
+	cd $dir
+	echo -e "Directories in the directory u entered are"
+	echo -e "'ls -l | grep "^d" | cut -d ""-f9'"
+	else
+		echo "Is not a directory"
+	fi
+
+#different code
